@@ -8,7 +8,7 @@ export default function TeamCarousel() {
       name: "Michael Taboada",
       nickname: "Maic",
       role: "Backend Developer",
-      image: "/public/michael.jpg",
+      image: "/michael.jpg",
       description: [
         "Me llamo Michael Andres pero mis amigos me llaman Maic, Maick, Maicol, May, Maicrophone, Maicky, Maickolín, Maickel, Mikel, Michael, Michell, Michelle, Mich, Empecé en la programación con un C++, tenía 9 meses. Actualmente estoy desempleado.",
         "Algunos de mis éxitos incluyen colaborar con Mozilla para el desarrollo de las primeras apps en su sistema FirefoxOS. Aunque hoy está desaparecido fue un gran avance en el mundo del desarrollo web.",
@@ -20,7 +20,7 @@ export default function TeamCarousel() {
       name: "Luna Quintero",
       nickname: "Lunita",
       role: "Team Lead",
-      image: "/public/luna.jpg",
+      image: "/luna.jpg",
       description: [
         "Soy Luna, especialista en desarrollo frontend con más de 8 años de experiencia. Mi pasión es crear interfaces intuitivas y accesibles que mejoren la experiencia del usuario.",
         "He trabajado en proyectos de e-commerce para grandes marcas, optimizando el rendimiento y la conversión de aplicaciones web que reciben millones de visitas mensuales.",
@@ -32,7 +32,7 @@ export default function TeamCarousel() {
       name: "Leonardo Gonzalez",
       nickname: "Leo",
       role: "Backend Developer",
-      image: "/public/Leonardo.jpg",
+      image: "/Leonardo.jpg",
       description: [
         "Hola, soy Leonardo Llevo más de 10 años construyendo arquitecturas robustas y escalables. Mi especialidad son los microservicios y la optimización de bases de datos.",
         "He liderado la migración de sistemas monolíticos a arquitecturas cloud-native, reduciendo costos operativos en un 40% y mejorando la disponibilidad del servicio.",
@@ -44,7 +44,7 @@ export default function TeamCarousel() {
       name: "María Salazar",
       nickname: "Cami",
       role: "UX/UI Designer",
-      image: "/public/María.jpg",
+      image: "/María.jpg",
       description: [
         "Soy María, diseñadora UX/UI con formación en psicología. Combino la comprensión del comportamiento humano con el diseño para crear experiencias digitales memorables.",
         "He diseñado aplicaciones que han ganado premios internacionales de diseño, siempre poniendo al usuario en el centro del proceso creativo.",
@@ -56,7 +56,7 @@ export default function TeamCarousel() {
       name: "Mauro González",
       nickname: "Mau",
       role: "DevOps Engineer",
-      image: "/public/mauro.png",
+      image: "/mauro.png",
       description: [
         "Me llamo Mauro y soy ingeniero DevOps. Mi misión es hacer que el desarrollo y el despliegue sean tan fluidos como sea posible. Automatización es mi segundo nombre.",
         "He implementado pipelines CI/CD que han reducido el tiempo de deployment de días a minutos, y establecido sistemas de monitoreo que previenen problemas antes de que ocurran.",
