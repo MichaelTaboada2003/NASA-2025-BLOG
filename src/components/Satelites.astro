@@ -1,0 +1,184 @@
+---
+interface Link { label: string; href: string }
+interface Satellite {
+  name: string
+  description: string
+  image?: { src: string; alt: string }
+  tags?: string[]
+  links?: Link[]
+}
+
+const satellites: Satellite[] = [
+  {
+    name: "NEOSSat (Near-Earth Object Surveillance Satellite)",
+    description:
+      "Microsatélite (2013– ) para NEOs, basura espacial (HEOSS) y apoyo a exoplanetas por tránsito. Datos astronómicos abiertos.",
+    image: { src: "/public/neossat.jpg", alt: "NEOSSat en órbita" },
+    tags: ["Exoplanetas", "NEOs", "HEOSS", "Fotometría"],
+    links: [
+      { label: "Docs CSA", href: "https://www.asc-csa.gc.ca/eng/satellites/neossat/" },
+      { label: "Más info", href: "https://en.wikipedia.org/wiki/NEOSSat" }
+    ]
+  },
+  {
+    name: "JWST (James Webb Space Telescope)",
+    description:
+      "Observatorio infrarrojo (2021– ) en L2. Contribución CSA: FGS y NIRISS. Clave para atmósferas de exoplanetas y universo temprano.",
+    image: { src: "/public/jwst.jpg", alt: "Telescopio espacial James Webb" },
+    tags: ["Infrarrojo", "NIRISS", "FGS", "Atmósferas"],
+    links: [
+      { label: "Docs CSA", href: "https://www.asc-csa.gc.ca/eng/satellites/jwst/about.asp" },
+      { label: "Webb", href: "https://webb.nasa.gov/" }
+    ]
+  }
+];
+---
+
+<section class="showcase" aria-labelledby="satellites-title">
+  <h2 id="satellites-title">🛰️ Satélites y Observatorios</h2>
+
+  <div class="list">
+    {satellites.map((sat) => (
+      <article class="card">
+        <div class="thumb">
+          {sat.image
+            ? <img src={sat.image.src} alt={sat.image.alt} loading="lazy" />
+            : <div class="placeholder" aria-hidden="true"></div>}
+        </div>
+
+        <div class="content">
+          <h3 class="title">{sat.name}</h3>
+
+          {sat.tags && sat.tags.length > 0 && (
+            <ul class="tags">
+              {sat.tags.map((t) => <li class="tag">{t}</li>)}
+            </ul>
+          )}
+
+          <p class="desc">{sat.description}</p>
+
+          {sat.links && sat.links.length > 0 && (
+            <div class="actions">
+              {sat.links.map((l) => (
+                <a class="btn" href={l.href} target="_blank" rel="noopener noreferrer">
+                  {l.label} →
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  :root{
+    --card-bg: rgba(255,255,255,.03);
+    --card-br: 14px;
+    --ring: rgba(255,255,255,.12);
+    --ring-strong: rgba(255,255,255,.22);
+    --accent: #7aa2ff;
+    --text-dim: rgba(232,235,255,.82);
+  }
+
+  .showcase{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(24px, 5vw, 48px);
+  }
+
+  .showcase h2{
+    margin: 0 0 18px;
+    font-size: clamp(22px, 4vw, 36px);
+    color: var(--accent);
+  }
+
+  .list{
+    display: grid;
+    gap: clamp(16px, 2.5vw, 24px);
+  }
+
+  .card{
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: clamp(14px, 2.2vw, 20px);
+    background: var(--card-bg);
+    border: 1px solid var(--ring);
+    border-radius: var(--card-br);
+    padding: clamp(12px, 2.4vw, 18px);
+    transition: border-color .2s ease, transform .2s ease, background .2s ease;
+  }
+  .card:hover{
+    border-color: var(--ring-strong);
+    transform: translateY(-2px);
+    background: rgba(255,255,255,.04);
+  }
+
+  /* Imagen */
+  .thumb{
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: calc(var(--card-br) - 4px);
+    border: 1px solid var(--ring);
+    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  }
+  .thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .thumb .placeholder{
+    width: 100%; height: 100%;
+    background: radial-gradient(800px 200px at 60% 30%, rgba(122,162,255,.18), rgba(122,162,255,0) 70%),
+                linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  }
+
+  /* Contenido */
+  .content{ display: grid; gap: 10px; align-content: start; }
+  .title{
+    margin: 2px 0 0;
+    font-size: clamp(18px, 2.6vw, 24px);
+  }
+  .tags{
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin: 0; padding: 0; list-style: none;
+  }
+  .tag{
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--ring);
+    background: rgba(122,162,255,.12);
+    color: #cfe1ff;
+  }
+  .desc{
+    margin: 2px 0 0;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  .actions{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 2px; }
+  .btn{
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--ring);
+    background: rgba(255,255,255,.06);
+    color: #fff; text-decoration: none; font-weight: 600; font-size: 14px;
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+  }
+  .btn:hover{ background: rgba(255,255,255,.12); border-color: var(--ring-strong); transform: translateY(-1px); }
+
+  /* Responsive: pila en móvil */
+  @media (max-width: 860px){
+    .card{ grid-template-columns: 1fr; }
+    .thumb{ order: -1; }
+  }
+
+  /* Respeta accesibilidad */
+  @media (prefers-reduced-motion: reduce){
+    .card, .btn{ transition: none; }
+  }
+</style>

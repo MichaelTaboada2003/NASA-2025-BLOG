@@ -1,0 +1,87 @@
+---
+const datasets = [
+  {
+    name: "Kepler KOI Cumulative",
+    description: `La tabla “Cumulative” de Kepler Objects of Interest (KOI). 
+    Es un superset consolidado con todos los KOI detectados por Kepler a lo largo 
+    de las diferentes “activity tables” (entregas por trimestres), reunidos en una sola hoja 
+    para trabajar siempre con el estado más actualizado de cada objeto.`,
+  },
+  {
+    name: "TOI – TESS Objects of Interest",
+    description: `La tabla de objetos de interés del proyecto TESS, gestionada por el equipo TESS. 
+    Reúne los TOI (señales de tránsito candidatas) con sus parámetros, estados y sectores observados.`,
+  },
+  {
+    name: "K2 Planets and Candidates",
+    description: `La tabla de planetas y candidatos de K2 (misión extendida de Kepler). 
+    Lista objetos reportados en la literatura como confirmados, candidatos o falsos positivos descubiertos por K2. 
+    Incluso cuando un objeto se confirma, permanece en la tabla con el estado actualizado.`,
+  },
+];
+---
+
+<section class="datasets">
+  <h2>📊 ¡Bases de Datos que usaremos!</h2>
+  <ul class="dataset-list">
+    {datasets.map(ds => (
+      <li class="dataset-card">
+        <h3>{ds.name}</h3>
+        <p>{ds.description}</p>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .datasets {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .datasets h2 {
+    font-size: clamp(24px, 4vw, 36px);
+    margin-bottom: 1rem;
+    color: #7aa2ff;
+  }
+
+  .datasets p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #e8ebff;
+  }
+
+  .dataset-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .dataset-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    transition: transform .2s ease;
+  }
+  .dataset-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(122,162,255,0.4);
+  }
+
+  .dataset-card h3 {
+    margin: 0 0 .6rem;
+    font-size: 1.2rem;
+    color: #9ab7ff;
+  }
+
+  .dataset-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+</style>

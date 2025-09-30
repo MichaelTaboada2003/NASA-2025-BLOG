@@ -1,0 +1,94 @@
+---
+const sections = [
+  {
+    title: "🔭 Desafío: Cazar Exoplanetas",
+    text: `El reto consiste en explorar mundos más allá de nuestro sistema solar, 
+    utilizando técnicas modernas de análisis y aprendizaje automático para detectar señales de nuevos exoplanetas.`,
+  },
+  {
+    title: "📜 Contexto",
+    text: `En sus inicios, la búsqueda de exoplanetas dependía en gran medida de la inspección manual de curvas de luz. 
+    Hoy en día, la meta es aprovechar la Inteligencia Artificial para automatizar este proceso y mejorar la detección.`,
+  },
+  {
+    title: "🛰️ Detección de exoplanetas",
+    text: `Misiones de la NASA como **Kepler (2009)** y **TESS (2018)** fueron lanzadas específicamente 
+    para el sondeo de exoplanetas, recolectando enormes volúmenes de datos astronómicos.`,
+  },
+  {
+    title: "✨ Método",
+    text: `Ambos satélites utilizan el **método de tránsito**, que mide las variaciones en la luz de una estrella 
+    cuando un planeta pasa frente a ella. Esta técnica ha sido la más exitosa en el descubrimiento de exoplanetas.`,
+  },
+  {
+    title: "🎯 Objetivo",
+    text: `Los datos de tránsito y las observaciones son públicos y de acceso abierto. 
+    El objetivo del desafío es crear un agente de IA o un modelo de *machine learning* que, 
+    entrenado con estos datos, pueda clasificar y detectar posibles nuevos candidatos a exoplanetas.`,
+  },
+  {
+    title: "💡 Astrobyte",
+    text: `Construiremos un modelo capaz de analizar los datos de tránsito 
+    para identificar exoplanetas con mayor precisión y eficiencia.`,
+  },
+  {
+    title: "🌍 Y tal vez...",
+    text: `Solo tal vez, podamos contribuir al descubrimiento de un nuevo mundo fuera de nuestro sistema solar.`,
+  }
+];
+---
+
+<section class="challenge">
+  <h2>🚀 Reto NASA Space Apps 2025: Cazar Exoplanetas</h2>
+
+  <ul class="challenge-list">
+    {sections.map(s => (
+      <li class="challenge-card">
+        <h3>{s.title}</h3>
+        <p>{s.text}</p>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .challenge {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  .challenge h2 {
+    font-size: clamp(26px, 4vw, 38px);
+    margin-bottom: 1rem;
+    color: #7aa2ff;
+  }
+  .challenge .intro {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+  .challenge-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+  .challenge-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1rem 1.4rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  }
+  .challenge-card h3 {
+    margin: 0 0 .4rem;
+    font-size: 1.1rem;
+    color: #9ab7ff;
+  }
+  .challenge-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+</style>

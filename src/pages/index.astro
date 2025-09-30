@@ -1,11 +1,50 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Hero from "../components/Hero.astro";
+import TransitMethod from "../components/TransitMethod.astro";
+import Datasets from "../components/Datasets.astro";
+import Satellites from "../components/Satelites.astro";
+import HojaRuta from "../components/HojaRuta.astro";
+import AboutMe from "../components/AboutMe.jsx";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+const site = {
+  title: "Nuestro Blog de Exoplanetas",
+  description: "Campo de estrellas y exoplanetas",
+};
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{site.title}</title>
+    <meta name="description" content={site.description} />
+    <style>
+      :root {
+        --hero-h: 70vh;
+        --bg: #05060a;
+        --text: #e8ebff;
+        --accent: #7aa2ff;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        color: var(--text);
+        background: #0a0b11;
+      }
+    </style>
+  </head>
+  <body>
+    <Hero />
+	<HojaRuta />
+	<TransitMethod />
+	<Datasets />
+	<Satellites />
+	<AboutMe client:load/>
+	
+
+  </body>
+</html>

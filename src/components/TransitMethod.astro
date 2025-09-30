@@ -1,0 +1,98 @@
+---
+const { title = "Método de Tránsito" } = Astro.props;
+---
+
+<section class="transit-method">
+  <h2>{title}</h2>
+  <p>
+    El método de tránsito es la técnica más exitosa y prolífica para el descubrimiento de exoplanetas
+    (planetas fuera de nuestro sistema solar), siendo el principio operativo de misiones espaciales
+    clave como <strong>Kepler</strong> y <strong>TESS</strong> de la NASA.
+  </p>
+
+  <h3>1. Definición y Mecanismo</h3>
+  <p>
+    Es una técnica de detección indirecta que se basa en la medición de la luz de una estrella.
+  </p>
+  <ul>
+    <li><strong>El Evento (Tránsito):</strong> Ocurre cuando un exoplaneta pasa directamente frente a su estrella anfitriona desde la perspectiva de la Tierra o de un telescopio espacial.</li>
+    <li><strong>El Efecto:</strong> El planeta bloquea una pequeña porción de la luz de la estrella, produciendo un oscurecimiento detectable con instrumentos sensibles.</li>
+  </ul>
+
+  <h3>2. La Curva de Luz</h3>
+  <p>
+    La evidencia de un tránsito se registra en lo que los astrónomos llaman una <em>curva de luz</em>: 
+    un gráfico que mide el brillo de la estrella a lo largo del tiempo.
+  </p>
+  <ul>
+    <li><strong>Caída de Brillo:</strong> El planeta entra en el disco estelar y la luz cae drásticamente.</li>
+    <li><strong>Fondo Plano:</strong> Mientras el planeta cruza la estrella, el brillo se mantiene estable pero reducido.</li>
+    <li><strong>Subida de Brillo:</strong> Cuando el planeta sale, la intensidad vuelve a su nivel normal.</li>
+  </ul>
+  <p>
+    La caída suele ser muy pequeña: menos del 1% para planetas del tamaño de Júpiter y mucho menor para planetas como la Tierra.
+  </p>
+
+  <h3>3. Información que Proporciona</h3>
+  <p>
+    Analizando la curva de luz, los científicos pueden deducir propiedades fundamentales:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parámetro Obtenido</th>
+        <th>¿Cómo se Determina?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Radio (Tamaño) del Planeta</td>
+        <td>Por la profundidad de la caída de brillo: planetas más grandes producen caídas más profundas.</td>
+      </tr>
+      <tr>
+        <td>Período Orbital y Distancia</td>
+        <td>El tiempo entre tránsitos consecutivos revela el período orbital; con leyes de Kepler se calcula la distancia.</td>
+      </tr>
+      <tr>
+        <td>Inclinación Orbital</td>
+        <td>El hecho de observar un tránsito indica que la órbita está alineada con nuestra perspectiva.</td>
+      </tr>
+      <tr>
+        <td>Atmósfera (Composición)</td>
+        <td>Durante el tránsito, la luz atraviesa la atmósfera del planeta; el análisis espectral revela su composición.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<style>
+  .transit-method {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255,255,255,0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  h2, h3 { color: #7aa2ff; margin-top: 1.5rem; }
+  p { line-height: 1.6; }
+  ul { margin: 0.8rem 0 1.2rem 1.2rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  th, td {
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+  }
+  td { color: #e8ebff; }
+</style>
