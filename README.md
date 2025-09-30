@@ -2,4 +2,4 @@
 
 Un blog sobre exoplanetas para documentar el reto de la NASA 2025.
 
-[![preview](./assets/preview.png)](https://nasa-2025-blog.netlify.app/)
+[![preview](/src/assets/preview.png)](https://nasa-2025-blog.netlify.app/)
